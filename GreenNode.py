@@ -81,10 +81,10 @@ def loop():
     GPIO.output(POWER_PIN, GPIO.LOW)  # turn the rain sensor's power OFF
 
     if rain_state == GPIO.HIGH:
-		#rd = false
+		rd = 0
         print("Rain state: No Rain Detected")
     else:
-		#rd = true
+		rd = 1
         print("Rain state: Rain Detected")
         
     # temperature and humidity
@@ -121,8 +121,8 @@ def loop():
     print("Moisture:", output)
             
     # light intensity
-    #lightLevel=readLight()
-    #print("Light Level : " + format(lightLevel,'.2f') + " lx")
+    lightLevel=readLight()
+    print("Light Level : " + format(lightLevel,'.2f') + " lx")
     
     
     print()
@@ -133,9 +133,9 @@ def loop():
 		"carbon_monoxide": co,
 		"methane": sm,
 		"lpg": lpg,
-		"rain_detected": 0,
-		"soil_moisture": 0,
-		"illuminance": 200.0
+		"rain_detected": rd,
+		"soil_moisture": output,
+		"illuminance": lightLevel
     }
     
     json_data = json.dumps(sensor_data)
@@ -148,10 +148,10 @@ def loop():
     
     #response = requests.post(url, data = json_data, headers = headers)
     
-    #if response.status_code == 200:
-    #    print("Data sent successfully")
-    #else:
-    #    print("Response", response.text)
+    if response.status_code == 200:
+        print("Data sent successfully")
+    else:
+        print("Response", response.text)
     
     time.sleep(10)  # pause for 10 seconds to avoid reading sensors frequently and prolong the sensor lifetime
 
