@@ -1,7 +1,7 @@
 # Green Energy-Efficient IoT Network for Environmental Monitoring
 
 ## Overview
-This project focuses on creating an eco-friendly, energy-efficient IoT network for environmental monitoring using a Raspberry Pi and various sensors. The goal is to reduce the environmental impact of IoT devices while providing real-time, reliable data for assessing environmental conditions.
+This project focuses on creating an eco-friendly, energy-efficient IoT network for environmental monitoring using a Raspberry Pi and various sensors. The goal is to reduce the environmental impact of IoT devices while providing real-time, reliable data for assessing environmental conditions. Data is processed locally and sent to Azure IoT Hub for analysis and visualization.
 
 ## Features
 - **Real-time Monitoring**: Provides up-to-date data on temperature, humidity, soil moisture, rain detection, air quality, and light intensity.
@@ -30,7 +30,7 @@ The project uses Python for data collection, processing, and transmission to Azu
 ## Usage
 1. **Run the Script**:
     ```bash
-    python main.py
+    python GreenNode.py
     ```
 
 2. The script will initialize sensors and periodically send data to both the Azure IoT Hub and the REST API endpoint.
