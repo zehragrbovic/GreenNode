@@ -26,19 +26,6 @@ The project uses Python for data collection, processing, and transmission to Azu
 - `azure.iot.device`: For connecting and sending data to Azure IoT Hub.
 - `aiohttp`: For asynchronous HTTP requests.
 
-## Installation
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
-    ```
-
-2. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Set Up Azure IoT Hub**: Add your IoT Hub connection string in the `CONNECTION_STRING` variable in the code.
 
 ## Usage
 1. **Run the Script**:
